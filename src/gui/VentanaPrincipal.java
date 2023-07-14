@@ -1,12 +1,15 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.CollationElementIterator;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.plaf.basic.BasicButtonUI;
 /**
  *
  * @author Dr. lagrimasnegras
@@ -127,6 +130,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         setStyles(totales, texto, fuentetotal);
         
+        setStyles(completar);
+        
         
         
     }
@@ -154,11 +159,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 @Override
                 public void mouseExited(MouseEvent e) {
                     fld.setBackground(new Color(201, 200, 197));
-                }
-                
-                
+                }              
         });
         }
+    }
+    
+    private void setStyles(JButton boton) {
+        boton.setUI(new BasicButtonUI());
+        boton.setBackground(new Color(0, 100, 0));
+        boton.setForeground(Color.white);
+        boton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                boton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                boton.setBackground(new Color(0, 150, 0));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                boton.setBackground(new Color(0, 100, 0));
+            }
+            
+            
+            
+            
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -174,7 +203,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         subtotal = new javax.swing.JLabel();
         cambio = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        completar = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,7 +223,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         total.setText("TOTAL:");
 
-        jButton1.setText("Completar operación");
+        completar.setText("Completar operación");
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -211,7 +240,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(productoTitulo)
                     .addComponent(bienvenida)
                     .addComponent(textFieldProducto)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(completar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         menuLayout.setVerticalGroup(
@@ -234,7 +263,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(total)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(completar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -310,8 +339,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bienvenida;
     private javax.swing.JLabel cambio;
+    private javax.swing.JButton completar;
     private javax.swing.JPanel contenido;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel productoTitulo;
     private javax.swing.JLabel recibeTitulo;

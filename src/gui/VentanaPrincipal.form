@@ -52,7 +52,7 @@
                       <Component id="productoTitulo" min="-2" max="-2" attributes="0"/>
                       <Component id="bienvenida" min="-2" max="-2" attributes="0"/>
                       <Component id="textFieldProducto" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton1" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
+                      <Component id="completar" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
@@ -78,7 +78,7 @@
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="total" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="completar" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -119,7 +119,7 @@
             <Property name="text" type="java.lang.String" value="TOTAL:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="completar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Completar operaci&#xf3;n"/>
           </Properties>
