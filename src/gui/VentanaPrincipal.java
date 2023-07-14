@@ -2,6 +2,8 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 /**
  *
  * @author Dr. lagrimasnegras
@@ -59,7 +61,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         */
         
-        // ~~~ /// Método 1 \\\ `~~~
+        // ~~~ /// Método 1 - Estilos uno a uno \\\ `~~~
         
         // Almacenando un color en una variable del tipo Color
         
@@ -76,7 +78,58 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         */
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));   
         
+        // ~~~ /// Método 1 - Estilos por medio de ciclos for \\\ `~~~
         
+        /*
+        Para hacer más limpio nuestro programa y no repetir lineas innecesarias es posible utilizar ciclos for
+        para agregar propiedades, existen muchas formas diferentes de hacer esto mismo pero aquí haremos uso de
+        únicamente dos cosas:
+        
+            - un array
+            - un ciclo for o for each
+        */
+        
+        // 2.1 Agrupamos los elementos de forma semántica junto con los estilos de fuente que vamos a utilizar para cada uno
+        // 2.2 Creamos un método que realice las modificaciones
+        // 2.3 Imlementando el método llenando los parámetros solicidato
+        
+        
+        Font fuentetitulos = new Font("Arial", Font.ITALIC, 13);
+        Font fuentetotal = new Font("Arial", Font.BOLD, 19);
+        
+        // Array con Text fields
+        JTextField [] textFields = {
+            textFieldProducto,
+            textFieldValor
+        };
+        
+        
+        ///Arrays con JLabels
+        JLabel [] titulosTextFields = {
+            productoTitulo,
+            recibeTitulo
+        };
+        
+        setFontStyles(titulosTextFields, texto, fuentetitulos);
+        
+        JLabel [] totales = {
+            subtotal,
+            cambio,
+            total
+        };
+        
+        setFontStyles(totales, texto, fuentetotal);
+        
+        
+        
+    }
+    
+    // Método para cambiar estilos usado para fuente
+    private void setFontStyles(JLabel [] label, Color color, Font font) {
+        for (JLabel lb : label) {
+            lb.setForeground(color);    // Reutilizaremos más adelante nuestra variable texto del tipo Color en la linea 68, por mientras solo le indicamos como parámetro que utilizaremos tal tipo de valor
+            lb.setFont(font);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -85,13 +138,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         menu = new javax.swing.JPanel();
         bienvenida = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        productoTitulo = new javax.swing.JLabel();
+        textFieldProducto = new javax.swing.JTextField();
+        recibeTitulo = new javax.swing.JLabel();
+        textFieldValor = new javax.swing.JTextField();
+        subtotal = new javax.swing.JLabel();
+        cambio = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
 
@@ -102,15 +155,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         bienvenida.setText("Bienvenido usuario");
 
-        jLabel1.setText("Producto:");
+        productoTitulo.setText("Producto:");
 
-        jLabel2.setText("Recibe:");
+        recibeTitulo.setText("Recibe:");
 
-        jLabel3.setText("SUBTOTAL:");
+        subtotal.setText("SUBTOTAL:");
 
-        jLabel4.setText("TOTAL:");
+        cambio.setText("CAMBIO:");
 
-        jLabel5.setText("CAMBIO:");
+        total.setText("TOTAL:");
 
         jButton1.setText("Completar operación");
 
@@ -121,14 +174,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
+                    .addComponent(total)
+                    .addComponent(cambio)
+                    .addComponent(subtotal)
+                    .addComponent(recibeTitulo)
+                    .addComponent(textFieldValor, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                    .addComponent(productoTitulo)
                     .addComponent(bienvenida)
-                    .addComponent(jTextField1)
+                    .addComponent(textFieldProducto)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -137,23 +190,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(menuLayout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addComponent(bienvenida)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel1)
+                .addGap(66, 66, 66)
+                .addComponent(productoTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119)
-                .addComponent(jLabel2)
+                .addComponent(textFieldProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(recibeTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(textFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(subtotal)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel4)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel5)
-                .addGap(39, 39, 39)
-                .addComponent(jButton1)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addComponent(cambio)
+                .addGap(50, 50, 50)
+                .addComponent(total)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         getContentPane().add(menu, java.awt.BorderLayout.EAST);
@@ -227,15 +280,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bienvenida;
+    private javax.swing.JLabel cambio;
     private javax.swing.JPanel contenido;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel menu;
+    private javax.swing.JLabel productoTitulo;
+    private javax.swing.JLabel recibeTitulo;
+    private javax.swing.JLabel subtotal;
+    private javax.swing.JTextField textFieldProducto;
+    private javax.swing.JTextField textFieldValor;
+    private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }
