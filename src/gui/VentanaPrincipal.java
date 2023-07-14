@@ -205,6 +205,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         total = new javax.swing.JLabel();
         completar = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(825, 550));
@@ -269,15 +270,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(menu, java.awt.BorderLayout.EAST);
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
         contenido.setLayout(contenidoLayout);
         contenidoLayout.setHorizontalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         contenidoLayout.setVerticalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(contenidoLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(518, Short.MAX_VALUE))
         );
 
         getContentPane().add(contenido, java.awt.BorderLayout.CENTER);
@@ -341,6 +347,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel cambio;
     private javax.swing.JButton completar;
     private javax.swing.JPanel contenido;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel productoTitulo;
     private javax.swing.JLabel recibeTitulo;
