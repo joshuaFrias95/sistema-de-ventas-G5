@@ -205,7 +205,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         total = new javax.swing.JLabel();
         completar = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(825, 550));
@@ -225,6 +232,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         total.setText("TOTAL:");
 
         completar.setText("Completar operación");
+        completar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                completarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -270,26 +282,74 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(menu, java.awt.BorderLayout.EAST);
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        contenido.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout contenidoLayout = new javax.swing.GroupLayout(contenido);
-        contenido.setLayout(contenidoLayout);
-        contenidoLayout.setHorizontalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel1.setPreferredSize(new java.awt.Dimension(640, 50));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(250, 50));
+
+        jLabel2.setText("Producto");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        contenidoLayout.setVerticalGroup(
-            contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(518, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(14, 14, 14))
         );
+
+        jPanel1.add(jPanel3, java.awt.BorderLayout.WEST);
+
+        jPanel4.setPreferredSize(new java.awt.Dimension(291, 50));
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jLabel3.setText("Costo unitario");
+        jLabel3.setPreferredSize(new java.awt.Dimension(120, 19));
+        jPanel4.add(jLabel3, java.awt.BorderLayout.WEST);
+
+        jLabel4.setText("Costo total");
+        jPanel4.add(jLabel4, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(jPanel4, java.awt.BorderLayout.EAST);
+
+        jLabel1.setText("Cantidad");
+        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
+
+        contenido.add(jPanel1, java.awt.BorderLayout.NORTH);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 641, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        contenido.add(jPanel5, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(contenido, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void completarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completarActionPerformed
+        Confirmacion conf = new Confirmacion();
+        conf.setLocationRelativeTo(null); 
+        conf.setVisible(true);
+    }//GEN-LAST:event_completarActionPerformed
 
     /**
      * En Netbeans es común que genere un try catch que incluye un Look & Feel,
@@ -347,7 +407,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel cambio;
     private javax.swing.JButton completar;
     private javax.swing.JPanel contenido;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel productoTitulo;
     private javax.swing.JLabel recibeTitulo;
