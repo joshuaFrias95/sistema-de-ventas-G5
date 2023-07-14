@@ -42,19 +42,19 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="total" min="-2" max="-2" attributes="0"/>
                       <Component id="cambio" min="-2" max="-2" attributes="0"/>
                       <Component id="subtotal" min="-2" max="-2" attributes="0"/>
                       <Component id="recibeTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="textFieldValor" alignment="0" pref="177" max="32767" attributes="0"/>
+                      <Component id="textFieldValor" alignment="0" max="32767" attributes="0"/>
                       <Component id="productoTitulo" min="-2" max="-2" attributes="0"/>
                       <Component id="bienvenida" min="-2" max="-2" attributes="0"/>
                       <Component id="textFieldProducto" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jButton1" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace pref="56" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

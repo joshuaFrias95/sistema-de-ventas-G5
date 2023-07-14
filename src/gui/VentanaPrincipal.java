@@ -2,6 +2,9 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.text.CollationElementIterator;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 /**
@@ -96,12 +99,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         Font fuentetitulos = new Font("Arial", Font.ITALIC, 13);
         Font fuentetotal = new Font("Arial", Font.BOLD, 19);
+        Font textFieldfont = new Font("Arial", Font.PLAIN, 12);
+       
         
         // Array con Text fields
         JTextField [] textFields = {
             textFieldProducto,
             textFieldValor
         };
+        
+        setStyles(textFields, textFieldfont);
         
         
         ///Arrays con JLabels
@@ -110,7 +117,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             recibeTitulo
         };
         
-        setFontStyles(titulosTextFields, texto, fuentetitulos);
+        setStyles(titulosTextFields, texto, fuentetitulos);
         
         JLabel [] totales = {
             subtotal,
@@ -118,17 +125,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             total
         };
         
-        setFontStyles(totales, texto, fuentetotal);
+        setStyles(totales, texto, fuentetotal);
         
         
         
     }
     
     // Método para cambiar estilos usado para fuente
-    private void setFontStyles(JLabel [] label, Color color, Font font) {
+    private void setStyles(JLabel [] label, Color color, Font font) {
         for (JLabel lb : label) {
             lb.setForeground(color);    // Reutilizaremos más adelante nuestra variable texto del tipo Color en la linea 68, por mientras solo le indicamos como parámetro que utilizaremos tal tipo de valor
             lb.setFont(font);
+        }
+    }
+    
+    // Aplicamos sobre carga de funciones
+    private void setStyles(JTextField [] txtfld, Font font) {
+        for (JTextField fld : txtfld) {
+            fld.setBackground(new Color(201, 200, 197));
+            fld.setFont(font);
+            fld.setForeground(Color.darkGray);
+            fld.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    fld.setBackground(new Color(221, 220, 217));
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    fld.setBackground(new Color(201, 200, 197));
+                }
+                
+                
+        });
         }
     }
 
@@ -172,18 +201,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(17, 17, 17)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(total)
                     .addComponent(cambio)
                     .addComponent(subtotal)
                     .addComponent(recibeTitulo)
-                    .addComponent(textFieldValor, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                    .addComponent(textFieldValor)
                     .addComponent(productoTitulo)
                     .addComponent(bienvenida)
                     .addComponent(textFieldProducto)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
