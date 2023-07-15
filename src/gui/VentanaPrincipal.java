@@ -5,7 +5,6 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.text.CollationElementIterator;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
