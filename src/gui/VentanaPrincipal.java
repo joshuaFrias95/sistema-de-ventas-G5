@@ -363,9 +363,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_completarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AddElements add = new AddElements();
-        add.setLocationRelativeTo(null); 
-        add.setVisible(true);
+        Agregar agr = new Agregar();
+        agr.setLocationRelativeTo(null); 
+        agr.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
