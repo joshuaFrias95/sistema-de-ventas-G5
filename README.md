@@ -54,5 +54,4 @@ Para más información sobre prefijos de commits puedes consultar este [reposito
 <br>
 <br>
 
-<img src="https://media.giphy.com/media/BBNYBoYa5VwtO/giphy.gif"/> <img src="https://media.giphy.com/media/BBNYBoYa5VwtO/giphy.gif"/> <img src="https://media.giphy.com/media/BBNYBoYa5VwtO/giphy.gif"/>
-
+<img src="https://media.giphy.com/media/BBNYBoYa5VwtO/giphy.gif"/> <img src="https://media.giphy.com/media/BBNYBoYa5VwtO/giphy.gif"/> 
