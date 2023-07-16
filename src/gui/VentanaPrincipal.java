@@ -215,7 +215,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(825, 550));
 
         menu.setPreferredSize(new java.awt.Dimension(250, 550));
 
@@ -338,15 +337,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         contenido.add(jPanel1, java.awt.BorderLayout.NORTH);
 
+        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 498, Short.MAX_VALUE)
         );
 
         contenido.add(jPanel5, java.awt.BorderLayout.CENTER);
@@ -362,6 +363,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         conf.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
         conf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        conf.setResizable(false);
 
     }//GEN-LAST:event_completarActionPerformed
 
@@ -371,6 +373,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         agr.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
         agr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        agr.setResizable(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
