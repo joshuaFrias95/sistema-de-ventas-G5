@@ -26,10 +26,10 @@ public class Confirmacion extends javax.swing.JFrame {
         myLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(250, 150));
 
         jPanel1.setBackground(new java.awt.Color(0, 100, 0));
 
+        myLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myLabel.setText("Transacción realizada con éxito");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -41,7 +41,7 @@ public class Confirmacion extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(myLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(myLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 

@@ -27,7 +27,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Cargando propiedades desde el constructor
         setResizable(false);
         
-        
+ 
         
         // Apartir del llamado de este método podemos comenzar a trabajar con los componentes
         initComponents();
@@ -360,12 +360,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Confirmacion conf = new Confirmacion();
         conf.setLocationRelativeTo(null); 
         conf.setVisible(true);
+        // Cerrar ventana secundaria pero no la principal
+        conf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }//GEN-LAST:event_completarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Agregar agr = new Agregar();
         agr.setLocationRelativeTo(null); 
         agr.setVisible(true);
+        // Cerrar ventana secundaria pero no la principal
+        agr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
