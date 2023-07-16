@@ -26,7 +26,7 @@ Sientete libre de contribuir en este proyecto realizando un pull request o gener
 - Clona este repositorio con el comando `git clone` seguido de la ruta de tu fork.
 - Crea una nueva rama con el comando  `git checkout -b <nombreDeTuRama>`en tu terminal dentro de la carpeta que clonaste.
 - Realiza tus cambios y al concluir genera un push a tu fork.
-- Una vez concluidos los cambios y desde tu repositorio en Github manda los cambios como `pull request`.
+- Una vez concluidos los cambios y desde tu repositorio en Github manda los cambios como `pull request` con el comando `git push origin request`.
 
 <br>
 
