@@ -35,6 +35,7 @@ public class Agregar extends javax.swing.JFrame {
         inputTextCat = new javax.swing.JTextField();
         inputTextNombre = new javax.swing.JTextField();
         inputSpinnerCantidad = new javax.swing.JSpinner();
+        botonAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,13 @@ public class Agregar extends javax.swing.JFrame {
         inputTextCat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputTextCatActionPerformed(evt);
+            }
+        });
+
+        botonAgregar.setText("Agregar");
+        botonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarActionPerformed(evt);
             }
         });
 
@@ -75,12 +83,16 @@ public class Agregar extends javax.swing.JFrame {
                             .addComponent(inputTextCat, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                             .addComponent(inputSpinnerCantidad)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addComponent(botonAgregar)
+                .addGap(129, 129, 129))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(inputTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -96,15 +108,26 @@ public class Agregar extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonAgregar)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void inputTextCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTextCatActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inputTextCatActionPerformed
+
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        /* Estableciendo los valores por defecto de las entradas de  datos
+        cuando se agrega un producto correctamente */
+        inputTextNombre.setText("");
+        inputTextCat.setText("");
+        inputSpinnerCantidad.setValue(0);
+        inputTextAreaDes.setText("");
+    }//GEN-LAST:event_botonAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +167,7 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAgregar;
     private javax.swing.JSpinner inputSpinnerCantidad;
     private javax.swing.JTextArea inputTextAreaDes;
     private javax.swing.JTextField inputTextCat;
