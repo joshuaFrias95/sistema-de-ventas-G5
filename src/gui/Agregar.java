@@ -4,6 +4,10 @@
  */
 package gui;
 
+import modelo.Producto;
+import java.util.LinkedList;
+import java.lang.Exception;
+
 /**
  *
  * @author lagrimasnegras
@@ -119,8 +123,27 @@ public class Agregar extends javax.swing.JFrame {
     private void inputTextCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTextCatActionPerformed
 
     }//GEN-LAST:event_inputTextCatActionPerformed
-
+    
+    // Lista creada para pruebas de agregacion de Productos
+    LinkedList<Producto> lkl = new LinkedList<>();
+    
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        
+        try {
+            //Verifica que todos los valores tengan un valor valido
+            if( (inputTextNombre.getText() != null) && (inputTextCat.getText() != null) && (inputTextAreaDes.getText() != null) && !inputSpinnerCantidad.getValue().equals(0) ){
+                lkl.add(new Producto(inputTextNombre.getText(), inputTextCat.getText(), (int)inputSpinnerCantidad.getValue(), inputTextAreaDes.getText()));
+            } else {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            System.out.println("Error al agregar el producto, verifica la informacion proporcionada");
+        }
+        
+        for(Producto pr: lkl){
+            System.out.println(pr);
+        }
+        
         /* Estableciendo los valores por defecto de las entradas de  datos
         cuando se agrega un producto correctamente */
         inputTextNombre.setText("");
