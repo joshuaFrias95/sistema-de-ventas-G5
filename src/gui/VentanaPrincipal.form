@@ -45,10 +45,10 @@
                       <Component id="cambio" min="-2" max="-2" attributes="0"/>
                       <Component id="subtotal" min="-2" max="-2" attributes="0"/>
                       <Component id="recibeTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="textFieldValor" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textFieldValorVp" alignment="0" max="32767" attributes="0"/>
                       <Component id="productoTitulo" min="-2" max="-2" attributes="0"/>
                       <Component id="bienvenida" min="-2" max="-2" attributes="0"/>
-                      <Component id="textFieldProducto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="textFieldProductoVp" alignment="0" max="32767" attributes="0"/>
                       <Component id="completar" alignment="0" min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -66,13 +66,13 @@
                   <Component id="productoTitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textFieldProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textFieldProductoVp" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="recibeTitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="textFieldValor" min="-2" max="-2" attributes="0"/>
+                  <Component id="textFieldValorVp" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="subtotal" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -97,14 +97,14 @@
             <Property name="text" type="java.lang.String" value="Producto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textFieldProducto">
+        <Component class="javax.swing.JTextField" name="textFieldProductoVp">
         </Component>
         <Component class="javax.swing.JLabel" name="recibeTitulo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Recibe:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="textFieldValor">
+        <Component class="javax.swing.JTextField" name="textFieldValorVp">
         </Component>
         <Component class="javax.swing.JLabel" name="subtotal">
           <Properties>

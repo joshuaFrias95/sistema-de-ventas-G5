@@ -106,8 +106,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         // Array con Text fields
         JTextField [] textFields = {
-            textFieldProducto,
-            textFieldValor
+            textFieldProductoVp,
+            textFieldValorVp
         };
         
         setStyles(textFields, textFieldfont);
@@ -196,9 +196,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menu = new javax.swing.JPanel();
         bienvenida = new javax.swing.JLabel();
         productoTitulo = new javax.swing.JLabel();
-        textFieldProducto = new javax.swing.JTextField();
+        textFieldProductoVp = new javax.swing.JTextField();
         recibeTitulo = new javax.swing.JLabel();
-        textFieldValor = new javax.swing.JTextField();
+        textFieldValorVp = new javax.swing.JTextField();
         subtotal = new javax.swing.JLabel();
         cambio = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
@@ -255,10 +255,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(cambio)
                     .addComponent(subtotal)
                     .addComponent(recibeTitulo)
-                    .addComponent(textFieldValor)
+                    .addComponent(textFieldValorVp)
                     .addComponent(productoTitulo)
                     .addComponent(bienvenida)
-                    .addComponent(textFieldProducto)
+                    .addComponent(textFieldProductoVp)
                     .addComponent(completar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
@@ -273,12 +273,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(productoTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textFieldProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldProductoVp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addGap(43, 43, 43)
                 .addComponent(recibeTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldValorVp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(subtotal)
                 .addGap(12, 12, 12)
@@ -364,7 +364,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Cerrar ventana secundaria pero no la principal
         conf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         conf.setResizable(false);
-
     }//GEN-LAST:event_completarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -445,8 +444,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel productoTitulo;
     private javax.swing.JLabel recibeTitulo;
     private javax.swing.JLabel subtotal;
-    private javax.swing.JTextField textFieldProducto;
-    private javax.swing.JTextField textFieldValor;
+    private javax.swing.JTextField textFieldProductoVp;
+    private javax.swing.JTextField textFieldValorVp;
     private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }

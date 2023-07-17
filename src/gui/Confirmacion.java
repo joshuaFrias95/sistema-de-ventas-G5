@@ -29,6 +29,7 @@ public class Confirmacion extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 100, 0));
 
+        myLabel.setForeground(new java.awt.Color(255, 255, 255));
         myLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myLabel.setText("Transacción realizada con éxito");
 
