@@ -8,14 +8,25 @@ import javax.swing.SwingConstants;
  * @author lagrimasnegras
  */
 public class Confirmacion extends javax.swing.JFrame {
+    
+    private static Confirmacion conf;
 
     public Confirmacion() {
         //setUndecorated(true);
         initComponents();
-        
         myLabel.setHorizontalAlignment(SwingConstants.CENTER);
         myLabel.setVerticalAlignment(SwingConstants.CENTER);
         myLabel.setFont(new Font("Verdana", Font.BOLD, 10));
+    }
+    
+    /* Metodo para evitar que se cree mas de una instancia de la Clase Confirmacion
+    y asi evitar que al presionar varias veces el boton 'completar operacion' en la clase
+    VentanaPrincipal se abran varias ventanas Confirmacion */
+    public static Confirmacion obtenerInstanciaConfirmacion(){
+        if(conf == null){
+            conf = new Confirmacion();
+        }
+        return conf;
     }
 
     @SuppressWarnings("unchecked")
@@ -26,10 +37,11 @@ public class Confirmacion extends javax.swing.JFrame {
         myLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(250, 150));
 
         jPanel1.setBackground(new java.awt.Color(0, 100, 0));
 
+        myLabel.setForeground(new java.awt.Color(255, 255, 255));
+        myLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myLabel.setText("Transacción realizada con éxito");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -41,7 +53,7 @@ public class Confirmacion extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(myLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(myLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -59,16 +71,6 @@ public class Confirmacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               Confirmacion conf = new Confirmacion();
-               conf.setLocationRelativeTo(null);
-               conf.setVisible(true);
-               
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;

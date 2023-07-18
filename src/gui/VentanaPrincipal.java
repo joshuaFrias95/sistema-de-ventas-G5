@@ -1,5 +1,7 @@
 package gui;
 
+import static gui.Agregar.obtenerInstanciaAgregar;
+import static gui.Confirmacion.obtenerInstanciaConfirmacion;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -27,7 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Cargando propiedades desde el constructor
         setResizable(false);
         
-        
+ 
         
         // Apartir del llamado de este método podemos comenzar a trabajar con los componentes
         initComponents();
@@ -106,8 +108,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         // Array con Text fields
         JTextField [] textFields = {
-            textFieldProducto,
-            textFieldValor
+            textFieldProductoVp,
+            textFieldValorVp
         };
         
         setStyles(textFields, textFieldfont);
@@ -193,29 +195,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         menu = new javax.swing.JPanel();
         bienvenida = new javax.swing.JLabel();
         productoTitulo = new javax.swing.JLabel();
-        textFieldProducto = new javax.swing.JTextField();
+        textFieldProductoVp = new javax.swing.JTextField();
         recibeTitulo = new javax.swing.JLabel();
-        textFieldValor = new javax.swing.JTextField();
+        textFieldValorVp = new javax.swing.JTextField();
         subtotal = new javax.swing.JLabel();
         cambio = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
         completar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         contenido = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableProductos = new javax.swing.JTable();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(825, 550));
 
         menu.setPreferredSize(new java.awt.Dimension(250, 550));
 
@@ -256,10 +254,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(cambio)
                     .addComponent(subtotal)
                     .addComponent(recibeTitulo)
-                    .addComponent(textFieldValor)
+                    .addComponent(textFieldValorVp)
                     .addComponent(productoTitulo)
                     .addComponent(bienvenida)
-                    .addComponent(textFieldProducto)
+                    .addComponent(textFieldProductoVp)
                     .addComponent(completar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
@@ -274,12 +272,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(productoTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textFieldProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldProductoVp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
                 .addGap(43, 43, 43)
                 .addComponent(recibeTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textFieldValorVp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(subtotal)
                 .addGap(12, 12, 12)
@@ -295,61 +293,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         contenido.setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(640, 50));
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Categoria", "Cantidad", "Descripcion"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jPanel3.setPreferredSize(new java.awt.Dimension(250, 50));
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
-        jLabel2.setText("Producto");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableProductos);
+        if (jTableProductos.getColumnModel().getColumnCount() > 0) {
+            jTableProductos.getColumnModel().getColumn(0).setResizable(false);
+            jTableProductos.getColumnModel().getColumn(0).setPreferredWidth(70);
+            jTableProductos.getColumnModel().getColumn(1).setResizable(false);
+            jTableProductos.getColumnModel().getColumn(1).setPreferredWidth(70);
+            jTableProductos.getColumnModel().getColumn(2).setResizable(false);
+            jTableProductos.getColumnModel().getColumn(2).setPreferredWidth(30);
+            jTableProductos.getColumnModel().getColumn(3).setResizable(false);
+            jTableProductos.getColumnModel().getColumn(3).setPreferredWidth(145);
+        }
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(14, 14, 14))
-        );
-
-        jPanel1.add(jPanel3, java.awt.BorderLayout.WEST);
-
-        jPanel4.setPreferredSize(new java.awt.Dimension(291, 50));
-        jPanel4.setLayout(new java.awt.BorderLayout());
-
-        jLabel3.setText("Costo unitario");
-        jLabel3.setPreferredSize(new java.awt.Dimension(120, 19));
-        jPanel4.add(jLabel3, java.awt.BorderLayout.WEST);
-
-        jLabel4.setText("Costo total");
-        jPanel4.add(jLabel4, java.awt.BorderLayout.CENTER);
-
-        jPanel1.add(jPanel4, java.awt.BorderLayout.EAST);
-
-        jLabel1.setText("Cantidad");
-        jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
-
-        contenido.add(jPanel1, java.awt.BorderLayout.NORTH);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 641, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-
-        contenido.add(jPanel5, java.awt.BorderLayout.CENTER);
+        contenido.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(contenido, java.awt.BorderLayout.CENTER);
 
@@ -357,15 +336,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void completarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completarActionPerformed
-        Confirmacion conf = new Confirmacion();
+        /* Se crea y inicializa instancia de Clase Confirmacion para que haya una sola en toda la ejecucion */
+        Confirmacion conf = obtenerInstanciaConfirmacion();
         conf.setLocationRelativeTo(null); 
         conf.setVisible(true);
+        // Cerrar ventana secundaria pero no la principal
+        conf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        conf.setResizable(false);
     }//GEN-LAST:event_completarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Agregar agr = new Agregar();
-        agr.setLocationRelativeTo(null); 
+        /* Se crea y inicializa instancia de Clase Agregar para que haya una sola en toda la ejecucion */
+        Agregar agr = obtenerInstanciaAgregar();
+        agr.setLocationRelativeTo(null);
         agr.setVisible(true);
+        // Cerrar ventana secundaria pero no la principal
+        agr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        agr.setResizable(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -415,6 +402,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 vp.pack();
                 vp.setLocationRelativeTo(null);     // Indicamos que la ventana se abra siempre al centro
                 vp.setVisible(true);    // el método .setVisible(true) es importante ya que nos va a permitir mostrar nuestro programa, siempre debe ir al final del mismo
+
             }
         });
     }
@@ -425,20 +413,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton completar;
     private javax.swing.JPanel contenido;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableProductos;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel productoTitulo;
     private javax.swing.JLabel recibeTitulo;
     private javax.swing.JLabel subtotal;
-    private javax.swing.JTextField textFieldProducto;
-    private javax.swing.JTextField textFieldValor;
+    private javax.swing.JTextField textFieldProductoVp;
+    private javax.swing.JTextField textFieldValorVp;
     private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }
