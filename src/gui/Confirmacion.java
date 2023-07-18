@@ -8,14 +8,25 @@ import javax.swing.SwingConstants;
  * @author lagrimasnegras
  */
 public class Confirmacion extends javax.swing.JFrame {
+    
+    private static Confirmacion conf;
 
     public Confirmacion() {
         //setUndecorated(true);
         initComponents();
-        
         myLabel.setHorizontalAlignment(SwingConstants.CENTER);
         myLabel.setVerticalAlignment(SwingConstants.CENTER);
         myLabel.setFont(new Font("Verdana", Font.BOLD, 10));
+    }
+    
+    /* Metodo para evitar que se cree mas de una instancia de la Clase Confirmacion
+    y asi evitar que al presionar varias veces el boton 'completar operacion' en la clase
+    VentanaPrincipal se abran varias ventanas Confirmacion */
+    public static Confirmacion obtenerInstanciaConfirmacion(){
+        if(conf == null){
+            conf = new Confirmacion();
+        }
+        return conf;
     }
 
     @SuppressWarnings("unchecked")

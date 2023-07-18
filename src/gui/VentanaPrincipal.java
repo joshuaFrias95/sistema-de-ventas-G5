@@ -1,5 +1,7 @@
 package gui;
 
+import static gui.Agregar.obtenerInstanciaAgregar;
+import static gui.Confirmacion.obtenerInstanciaConfirmacion;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -334,7 +336,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void completarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completarActionPerformed
-        Confirmacion conf = new Confirmacion();
+        /* Se crea y inicializa instancia de Clase Confirmacion para que haya una sola en toda la ejecucion */
+        Confirmacion conf = obtenerInstanciaConfirmacion();
         conf.setLocationRelativeTo(null); 
         conf.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
@@ -343,8 +346,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_completarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Agregar agr = new Agregar();
-        agr.setLocationRelativeTo(null); 
+        /* Se crea y inicializa instancia de Clase Agregar para que haya una sola en toda la ejecucion */
+        Agregar agr = obtenerInstanciaAgregar();
+        agr.setLocationRelativeTo(null);
         agr.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
         agr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -398,6 +402,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 vp.pack();
                 vp.setLocationRelativeTo(null);     // Indicamos que la ventana se abra siempre al centro
                 vp.setVisible(true);    // el método .setVisible(true) es importante ya que nos va a permitir mostrar nuestro programa, siempre debe ir al final del mismo
+
             }
         });
     }

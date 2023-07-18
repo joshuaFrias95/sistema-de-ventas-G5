@@ -13,6 +13,8 @@ import java.lang.Exception;
  * @author lagrimasnegras
  */
 public class Agregar extends javax.swing.JFrame {
+    
+    private static Agregar agr;
 
     /**
      * Creates new form AddElements
@@ -20,6 +22,17 @@ public class Agregar extends javax.swing.JFrame {
     public Agregar() {
         initComponents();
     }
+    
+    /* Metodo para evitar que se cree mas de una instancia de la Clase Agregar
+    y asi evitar que al presionar varias veces el boton (+) en la clase
+    VentanaPrincipal se abran varias ventanas Agregar */
+    public static Agregar obtenerInstanciaAgregar() {
+        if (agr == null) {
+            agr = new Agregar();
+        }
+        return agr;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,7 +86,7 @@ public class Agregar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5)
                     .addGroup(layout.createSequentialGroup()
@@ -87,9 +100,9 @@ public class Agregar extends javax.swing.JFrame {
                             .addComponent(inputTextCat, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                             .addComponent(inputSpinnerCantidad)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botonAgregar)
                 .addGap(129, 129, 129))
         );
