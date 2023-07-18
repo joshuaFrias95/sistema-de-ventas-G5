@@ -29,6 +29,8 @@ public class Agregar extends javax.swing.JFrame {
     public static Agregar obtenerInstanciaAgregar() {
         if (agr == null) {
             agr = new Agregar();
+            agr.setLocationRelativeTo(null);
+
         }
         return agr;
     }

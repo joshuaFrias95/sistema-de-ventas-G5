@@ -25,6 +25,7 @@ public class Confirmacion extends javax.swing.JFrame {
     public static Confirmacion obtenerInstanciaConfirmacion(){
         if(conf == null){
             conf = new Confirmacion();
+            conf.setLocationRelativeTo(null); 
         }
         return conf;
     }

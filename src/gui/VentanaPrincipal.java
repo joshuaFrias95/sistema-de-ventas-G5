@@ -338,7 +338,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void completarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_completarActionPerformed
         /* Se crea y inicializa instancia de Clase Confirmacion para que haya una sola en toda la ejecucion */
         Confirmacion conf = obtenerInstanciaConfirmacion();
-        conf.setLocationRelativeTo(null); 
         conf.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
         conf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -348,7 +347,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         /* Se crea y inicializa instancia de Clase Agregar para que haya una sola en toda la ejecucion */
         Agregar agr = obtenerInstanciaAgregar();
-        agr.setLocationRelativeTo(null);
         agr.setVisible(true);
         // Cerrar ventana secundaria pero no la principal
         agr.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
