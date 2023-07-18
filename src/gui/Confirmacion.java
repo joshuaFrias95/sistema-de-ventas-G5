@@ -60,16 +60,6 @@ public class Confirmacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               Confirmacion conf = new Confirmacion();
-               conf.setLocationRelativeTo(null);
-               conf.setVisible(true);
-               
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
