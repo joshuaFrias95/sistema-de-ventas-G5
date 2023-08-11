@@ -1,4 +1,4 @@
-package gui;
+package app.gui;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -215,7 +215,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(825, 550));
 
         menu.setPreferredSize(new java.awt.Dimension(250, 550));
 
